@@ -1,4 +1,3 @@
-<?php require_once "../inc/header.php"?>
 
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area">
@@ -268,7 +267,7 @@
                                 <input id="payment_defult" name="check_method" type="radio"
                                     data-target="createp_account" />
                                 <label for="payment_defult" data-toggle="collapse" data-target="#collapseFour"
-                                    aria-controls="collapseFour">PayPal <img src="../assets/img/icon/papyel.png"
+                                    aria-controls="collapseFour">PayPal <img src="assets/img/icon/papyel.png"
                                         alt=""></label>
 
                                 <div id="collapseFour" class="collapse" data-parent="#accordionExample">
@@ -290,4 +289,3 @@
     </div>
 </div>
 <!--Checkout page section end-->
-<?php require_once "../inc/footer.php"?>

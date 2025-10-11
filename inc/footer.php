@@ -6,7 +6,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container contact_us">
                         <div class="footer_logo">
-                            <a href="#"><img src="../assets/img/logo/logo.png" alt=""></a>
+                            <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
                         </div>
                         <div class="footer_contact">
                             <p>John draw real poor on call my from. May she mrs furnished discourse extremely. Ask doubt
@@ -22,30 +22,13 @@
                         <h3>Information</h3>
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Delivery Information</a></li>
-                                <li><a href="contact.html">Privacy Policy</a></li>
-                                <li><a href="services.html">Terms & Conditions</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Gift Certificates</a></li>
+                                <li><a href="<?= "index.php?page=about" ?>">About Us</a></li>
+                                <li><a href="<?= "index.php?page=home" ?>">Returns</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="widgets_container widget_menu">
-                        <h3>My Account</h3>
-                        <div class="footer_menu">
-                            <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Order History</a></li>
-                                <li><a href="wishlist.html">Wish List</a></li>
-                                <li><a href="#">Newsletter</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                                <li><a href="faq.html">International Orders</a></li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="widgets_container newsletter">
@@ -91,7 +74,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="footer_payment text-right">
-                        <a href="#"><img src="../assets/img/icon/payment.png" alt=""></a>
+                        <a href="#"><img src="assets/img/icon/payment.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -105,10 +88,10 @@
 
 
 <!-- Plugins JS -->
-<script src="../assets/js/plugins.js"></script>
+<script src="assets/js/plugins.js"></script>
 
 <!-- Main JS -->
-<script src="../assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 
 
 

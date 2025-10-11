@@ -1,4 +1,3 @@
-<?php require_once "../inc/header.php"?>
 
     <!--breadcrumbs area start-->
     <div class="breadcrumbs_area">
@@ -21,7 +20,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-12">
-					<div class="account-contents" style="background: url('../assets/img/about/about2.jpg'); background-size: cover;">
+					<div class="account-contents" style="background: url('assets/img/about/about2.jpg'); background-size: cover;">
                         <div class="row">
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
                                 <div class="account-thumb">
@@ -70,4 +69,3 @@
 			</div>
 		</div>
 	</section>
-<?php require_once "../inc/footer.php"?>

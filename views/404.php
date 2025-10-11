@@ -1,5 +1,3 @@
-<?php require_once "../inc/header.php"?>
-
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area">
     <div class="container">
@@ -7,7 +5,7 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index-2.html">home</a></li>
+                        <li><a href="<?= "index.php?page=home" ?>">home</a></li>
                         <li>404 page</li>
                     </ul>
                 </div>
@@ -24,16 +22,14 @@
         <div class="row">
             <div class="col-12">
                 <div class="error_form">
-                    <img src="../assets/img/404.jpg" alt="" />
+                    <img src="assets/img/404.jpg" alt="" />
                     <h2>Opps! PAGE NOT BE FOUND</h2>
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random <br /> text. It has roots in a piece
                         of classical</p>
-                    <a href="index-2.html">Back to home page</a>
+                    <a href="<?= "index.php?page=home" ?>">Back to home page</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <!--error section area end-->
-
-<?php require_once "../inc/footer.php"?>

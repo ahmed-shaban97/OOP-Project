@@ -1,4 +1,3 @@
-<?php require_once "../inc/header.php"?>
 
 
 <!--breadcrumbs area start-->
@@ -40,7 +39,7 @@
                                 <tbody>
                                     <tr>
                                         <td class="product_thumb"><a href="#"><img
-                                                    src="../assets/img/s-product/product.jpg" alt=""></a></td>
+                                                    src="assets/img/s-product/product.jpg" alt=""></a></td>
                                         <td class="product_name"><a href="#">Handbag fringilla</a></td>
                                         <td class="product-price">$65.00</td>
                                         <td class="product_quantity"><label>Quantity</label> <input min="1" max="100"
@@ -52,7 +51,7 @@
 
                                     <tr>
                                         <td class="product_thumb"><a href="#"><img
-                                                    src="../assets/img/s-product/product2.jpg" alt=""></a></td>
+                                                    src="assets/img/s-product/product2.jpg" alt=""></a></td>
                                         <td class="product_name"><a href="#">Handbags justo</a></td>
                                         <td class="product-price">$90.00</td>
                                         <td class="product_quantity"><label>Quantity</label> <input min="1" max="100"
@@ -116,4 +115,3 @@
 </div>
 <!--shopping cart area end -->
 
-<?php require_once "../inc/footer.php"?>

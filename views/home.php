@@ -1,6 +1,13 @@
-<?php require_once "../inc/header.php"?>
+<!-- views/home.php -->
 <!--slider area start-->
-<section class="slider_section d-flex align-items-center" data-bgimg="../assets/img/slider/slider3.jpg">
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+        use Model\Message;
+        $message = new Message;
+        $message->getMessage();
+?>
+<section class="slider_section d-flex align-items-center" data-bgimg="assets/img/slider/slider3.jpg">
     <div class="slider_area owl-carousel">
         <div class="single_slider d-flex align-items-center">
             <div class="container">
@@ -15,7 +22,7 @@
                     </div>
                     <div class="col-xl-6 col-md-6">
                         <div class="slider_content">
-                            <img src="../assets/img/product/1.png" alt="">
+                            <img src="assets/img/product/1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -35,7 +42,7 @@
                     </div>
                     <div class="col-xl-6 col-md-6">
                         <div class="slider_content">
-                            <img src="../assets/img/product/2.png" alt="">
+                            <img src="assets/img/product/2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -54,7 +61,7 @@
                     </div>
                     <div class="col-xl-6 col-md-6">
                         <div class="slider_content">
-                            <img src="../assets/img/product/3.png" alt="">
+                            <img src="assets/img/product/3.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -79,7 +86,7 @@
                 <div class="single-tranding">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-1.jpg" alt="">
+                            <img src="assets/img/product/tranding-1.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Meyoji Robast Drone</h3>
@@ -98,7 +105,7 @@
                 <div class="single-tranding">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-2.jpg" alt="">
+                            <img src="assets/img/product/tranding-2.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Ut praesentium earum</h3>
@@ -117,7 +124,7 @@
                 <div class="single-tranding">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-3.jpg" alt="">
+                            <img src="assets/img/product/tranding-3.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Consectetur adipisicing</h3>
@@ -150,7 +157,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-features">
-                    <img src="../assets/img/icon/1.png" alt="">
+                    <img src="assets/img/icon/1.png" alt="">
                     <h3>Impressive Distance</h3>
                     <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum
                         voluptatibus dignissimos</p>
@@ -158,7 +165,7 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-features">
-                    <img src="../assets/img/icon/2.png" alt="">
+                    <img src="assets/img/icon/2.png" alt="">
                     <h3>100% self safe</h3>
                     <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum
                         voluptatibus dignissimos</p>
@@ -166,14 +173,14 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-features">
-                    <img src="../assets/img/icon/3.png" alt="">
+                    <img src="assets/img/icon/3.png" alt="">
                     <h3>Awesome Support</h3>
                     <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum
                         voluptatibus dignissimos</p>
                 </div>
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
-                <a href="#"><img src="../assets/img/product/2.png" alt=""></a>
+                <a href="#"><img src="assets/img/product/2.png" alt=""></a>
             </div>
         </div>
     </div>
@@ -197,7 +204,7 @@
                 <div class="single-tranding mb-30">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-1.jpg" alt="">
+                            <img src="assets/img/product/tranding-1.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Meyoji Robast Drone</h3>
@@ -216,7 +223,7 @@
                 <div class="single-tranding mb-30">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-2.jpg" alt="">
+                            <img src="assets/img/product/tranding-2.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Ut praesentium earum</h3>
@@ -235,7 +242,7 @@
                 <div class="single-tranding mb-30">
                     <a href="product-details.html">
                         <div class="tranding-pro-img">
-                            <img src="../assets/img/product/tranding-3.jpg" alt="">
+                            <img src="assets/img/product/tranding-3.jpg" alt="">
                         </div>
                         <div class="tranding-pro-title">
                             <h3>Consectetur adipisicing</h3>
@@ -265,7 +272,7 @@
                         <article class="single_testimonial">
                             <figure>
                                 <div class="testimonial_thumb">
-                                    <a href="#"><img src="../assets/img/about/team-3.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/about/team-3.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="testimonial_content">
                                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
@@ -278,7 +285,7 @@
                         <article class="single_testimonial">
                             <figure>
                                 <div class="testimonial_thumb">
-                                    <a href="#"><img src="../assets/img/about/team-1.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/about/team-1.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="testimonial_content">
                                     <p>There are many variations of passages of Lorem Ipsum available, but the majority
@@ -292,7 +299,7 @@
                         <article class="single_testimonial">
                             <figure>
                                 <div class="testimonial_thumb">
-                                    <a href="#"><img src="../assets/img/about/team-2.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/about/team-2.jpg" alt=""></a>
                                 </div>
                                 <figcaption class="testimonial_content">
                                     <p>College in Virginia, looked up one of the more obscure Latin words, consectetur,
@@ -317,7 +324,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="single_shipping">
                     <div class="shipping_icone">
-                        <img src="../assets/img/about/shipping1.png" alt="">
+                        <img src="assets/img/about/shipping1.png" alt="">
                     </div>
                     <div class="shipping_content">
                         <h2>Free Shipping</h2>
@@ -328,7 +335,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="single_shipping">
                     <div class="shipping_icone">
-                        <img src="../assets/img/about/shipping2.png" alt="">
+                        <img src="assets/img/about/shipping2.png" alt="">
                     </div>
                     <div class="shipping_content">
                         <h2>Support 24/7</h2>
@@ -339,7 +346,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="single_shipping">
                     <div class="shipping_icone">
-                        <img src="../assets/img/about/shipping3.png" alt="">
+                        <img src="assets/img/about/shipping3.png" alt="">
                     </div>
                     <div class="shipping_content">
                         <h2>100% Money Back</h2>
@@ -350,7 +357,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="single_shipping">
                     <div class="shipping_icone">
-                        <img src="../assets/img/about/shipping4.png" alt="">
+                        <img src="assets/img/about/shipping4.png" alt="">
                     </div>
                     <div class="shipping_content">
                         <h2>Payment Secure</h2>
@@ -362,4 +369,3 @@
     </div>
 </section>
 <!--shipping area end-->
-<?php require_once "../inc/footer.php"?>

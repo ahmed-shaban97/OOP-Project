@@ -1,3 +1,4 @@
+<!-- inc/header.php -->
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -10,18 +11,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
     <!-- CSS 
     ========================= -->
 
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assets/css/plugins.css">
+    <link rel="stylesheet" href="assets/css/plugins.css">
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
 </head>
 
@@ -48,8 +49,7 @@
                         </div>
                         <div class="top_right text-right">
                             <ul>
-                                <li><a href="my-account.php"> My Account </a></li>
-                                <li><a href="checkout.php"> Checkout </a></li>
+                                <li><a href="<?= "index.php?page=checkout" ?>"> Checkout </a></li>
                             </ul>
                         </div>
                         <div class="search_container">
@@ -62,17 +62,14 @@
                         </div>
 
                         <div class="middel_right_info">
-                            <div class="header_wishlist">
-                                <a href="wishlist.php"><img src="../assets/img/user.png" alt=""></a>
-                            </div>
                             <div class="mini_cart_wrapper">
-                                <a href="javascript:void(0)"><img src="../assets/img/shopping-bag.png" alt=""></a>
+                                <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png" alt=""></a>
                                 <span class="cart_quantity">2</span>
                                 <!--mini cart-->
                                 <div class="mini_cart">
                                     <div class="cart_item">
                                         <div class="cart_img">
-                                            <a href="#"><img src="../assets/img/s-product/product.jpg" alt=""></a>
+                                            <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
                                         </div>
                                         <div class="cart_info">
                                             <a href="#">Sit voluptatem rhoncus sem lectus</a>
@@ -84,7 +81,7 @@
                                     </div>
                                     <div class="cart_item">
                                         <div class="cart_img">
-                                            <a href="#"><img src="../assets/img/s-product/product2.jpg" alt=""></a>
+                                            <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
                                         </div>
                                         <div class="cart_info">
                                             <a href="#">Natus erro at congue massa commodo</a>
@@ -107,10 +104,10 @@
 
                                     <div class="mini_cart_footer">
                                         <div class="cart_button">
-                                            <a href="cart.php">View cart</a>
+                                            <a href="<?= "index.php?page=cart" ?>">View cart</a>
                                         </div>
                                         <div class="cart_button">
-                                            <a href="checkout.php">Checkout</a>
+                                            <a href="<?= "index.php?page=checkout" ?>">Checkout</a>
                                         </div>
 
                                     </div>
@@ -122,39 +119,28 @@
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children active">
-                                    <a href="#">Home</a>
+                                    <a href="<?= "index.php?page=home" ?>">Home</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="product-details.php">product</a>
+                                    <a href="<?= "index.php?page=product-details" ?>">product</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">pages </a>
                                     <ul class="sub-menu">
-                                        <li><a href="about.php">About Us</a></li>
-                                        <li><a href="contact.php">contact</a></li>
-                                        <li><a href="privacy-policy.php">privacy policy</a></li>
-                                        <li><a href="faq.php">Frequently Questions</a></li>
-                                        <li><a href="login.php">login</a></li>
-                                        <li><a href="register.php">register</a></li>
-                                        <li><a href="forget-password.php">Forget Password</a></li>
-                                        <li><a href="404.php">Error 404</a></li>
-                                        <li><a href="cart.php">cart</a></li>
-                                        <li><a href="tracking.php">tracking</a></li>
-                                        <li><a href="checkout.php">checkout</a></li>
+                                        <li><a href="<?= "index.php?page=about" ?>">About Us</a></li>
+                                        <li><a href="<?= "index.php?page=contact" ?>">contact</a></li>
+                                        <li><a href="<?= "index.php?page=login" ?>">login</a></li>
+                                        <li><a href="<?= "index.php?page=register" ?>">register</a></li>
+                                        <li><a href="<?= "index.php?page=404" ?>">Error 404</a></li>
+                                        <li><a href="<?= "index.php?page=cart" ?>">cart</a></li>
+                                        <li><a href="<?= "index.php?page=checkout" ?>">checkout</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.php">blog</a></li>
-                                        <li><a href="blog-details.php">blog details</a></li>
-                                    </ul>
+                                    <a href="<?= "index.php?page=login" ?>">my account</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="login.php">my account</a>
-                                </li>
-                                <li class="menu-item-has-children">
-                                    <a href="contact.php"> Contact Us</a>
+                                    <a href="<?= "index.php?page=contact" ?>"> Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -190,8 +176,8 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="top_right text-right">
                                 <ul>
-                                    <li><a href="my-account.php">Account</a></li>
-                                    <li><a href="checkout.php">Checkout</a></li>
+
+                                    <li><a href="<?= "index.php?page=checkout" ?>">Checkout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -205,7 +191,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-3 col-md-6">
                             <div class="logo">
-                                <a href="home-2.php"><img src="../assets/img/logo/logo.png" alt=""></a>
+                                <a href="<?= "index.php?page=home" ?>"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-6">
@@ -220,18 +206,16 @@
                                 </div>
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
-                                        <a href="#"><img src="../assets/img/user.png" alt=""></a>
+                                        <a href="#"><img src="assets/img/user.png" alt=""></a>
                                     </div>
                                     <div class="mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><img src="../assets/img/shopping-bag.png"
-                                                alt=""></a>
+                                        <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png" alt=""></a>
                                         <span class="cart_quantity">2</span>
                                         <!--mini cart-->
                                         <div class="mini_cart">
                                             <div class="cart_item">
                                                 <div class="cart_img">
-                                                    <a href="#"><img src="../assets/img/s-product/product.jpg"
-                                                            alt=""></a>
+                                                    <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
                                                 </div>
                                                 <div class="cart_info">
                                                     <a href="#">Sit voluptatem rhoncus sem lectus</a>
@@ -243,8 +227,7 @@
                                             </div>
                                             <div class="cart_item">
                                                 <div class="cart_img">
-                                                    <a href="#"><img src="../assets/img/s-product/product2.jpg"
-                                                            alt=""></a>
+                                                    <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
                                                 </div>
                                                 <div class="cart_info">
                                                     <a href="#">Natus erro at congue massa commodo</a>
@@ -267,10 +250,10 @@
 
                                             <div class="mini_cart_footer">
                                                 <div class="cart_button">
-                                                    <a href="cart.php">View cart</a>
+                                                    <a href="<?= "index.php?page=cart" ?>">View cart</a>
                                                 </div>
                                                 <div class="cart_button">
-                                                    <a href="checkout.php">Checkout</a>
+                                                    <a href="<?= "index.php?page=checkout" ?>">Checkout</a>
                                                 </div>
 
                                             </div>
@@ -293,23 +276,22 @@
                             <div class="main_menu menu_position">
                                 <nav>
                                     <ul>
-                                        <li><a href="home.php">home</a></li>
-                                        <li><a href="product-details.php">Product</a></li>
+                                        <li><a href="<?= "index.php?page=home" ?>">home</a></li>
+                                        <li><a href="<?= "index.php?page=product-details" ?>">Product</a></li>
 
                                         <li><a class="active" href="#">pages <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
-                                                <li><a href="about.php">About Us</a></li>
-                                                <li><a href="contact.php">contact</a></li>
-                                                <li><a href="privacy-policy.php">privacy policy</a></li>
-                                                <li><a href="login.php">login</a></li>
-                                                <li><a href="register.php">register</a></li>
-                                                <li><a href="404.php">Error 404</a></li>
-                                                <li><a href="cart.php">cart</a></li>
-                                                <li><a href="checkout.php">checkout</a></li>
+                                                <li><a href="<?= "index.php?page=about" ?>">About Us</a></li>
+                                                <li><a href="<?= "index.php?page=contact" ?>">contact</a></li>
+                                                <li><a href="<?= "index.php?page=login" ?>">login</a></li>
+                                                <li><a href="<?= "index.php?page=register" ?>">register</a></li>
+                                                <li><a href="<?= "index.php?page=404" ?>">Error 404</a></li>
+                                                <li><a href="<?= "index.php?page=cart" ?>">cart</a></li>
+                                                <li><a href="<?= "index.php?page=checkout" ?>">checkout</a></li>
                                             </ul>
                                         </li>
 
-                                        <li><a href="contact.php"> Contact Us</a></li>
+                                        <li><a href="<?= "index.php?page=contact" ?>"> Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
