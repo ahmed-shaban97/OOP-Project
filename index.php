@@ -10,7 +10,6 @@ require_once "inc/header.php";
 $page = $_GET['page'] ?? 'home';
 
 $routes = [
-    'login-controller' => 'controller/auth/login.php',
     'home' => 'views/home.php',
     'about' => 'views/about.php',
     'product-details' => 'views/product-details.php',
@@ -19,6 +18,8 @@ $routes = [
     'cart' => 'views/cart.php',
     'login' => 'views/auth/login.php',
     'register' => 'views/auth/register.php',
+    
+    'login-controller' => 'controller/auth/login.php',
     'register-controller' => 'controller/auth/register.php',
     'add-to-cart' => 'controller/cart/add-to-cart.php',
     'cart-increment' => 'controller/cart/increment.php',

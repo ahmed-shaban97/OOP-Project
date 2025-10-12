@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $validator = new Validator($_POST);
 
     foreach ($rules as $field => $rule) {
-        $validator->validate($_POST[$field] ?? '', $field, $rule);
+        $validator->validate($_POST[$field], $field, $rule);
     }
 
     if ($validator->hasErrors()) {
