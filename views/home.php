@@ -17,7 +17,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
                             <h1>Next level of Drone</h1>
                             <h2>Insane Quality for use</h2>
                             <p>Special offer <span> 20% off </span> this week</p>
-                            <a class="button" href="product-details.html">Buy now</a>
+                            <a class="button" href="<?= "index.php?page=product-details" ?>">Buy now</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6">
@@ -37,7 +37,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
                             <h1>Best Camera Included</h1>
                             <h2>100% Flexible</h2>
                             <p>exclusive offer <span> 20% off </span> this week</p>
-                            <a class="button" href="product-details.html">Shop now</a>
+                            <a class="button" href="<?= "index.php?page=product-details" ?>">Shop now</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6">
@@ -56,7 +56,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
                             <h1>With some gifts</h1>
                             <h2>Special one for you</h2>
                             <p>exclusive offer <span> 20% off </span> this week</p>
-                            <a class="button" href="product-details.html">shopping now</a>
+                            <a class="button" href="<?= "index.php?page=product-details" ?>">shopping now</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-md-6">
@@ -84,7 +84,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <div class="row justify-content-center">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-1.jpg" alt="">
                         </div>
@@ -103,7 +103,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-2.jpg" alt="">
                         </div>
@@ -122,7 +122,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-3.jpg" alt="">
                         </div>
@@ -202,7 +202,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
         <div class="row justify-content-center">
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding mb-30">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-1.jpg" alt="">
                         </div>
@@ -221,7 +221,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding mb-30">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-2.jpg" alt="">
                         </div>
@@ -240,7 +240,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
             </div>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                 <div class="single-tranding mb-30">
-                    <a href="product-details.html">
+                    <a href="<?= "index.php?page=product-details" ?>">
                         <div class="tranding-pro-img">
                             <img src="assets/img/product/tranding-3.jpg" alt="">
                         </div>

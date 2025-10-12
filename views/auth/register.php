@@ -1,5 +1,12 @@
 <!-- views/auth/register.php -->
 <!--breadcrumbs area start-->
+<?php
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+        use Model\Message;
+        $message = new Message;
+        $message->getMessage();
+?>
 <div class="breadcrumbs_area">
     <div class="container">
         <div class="row">
