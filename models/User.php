@@ -1,4 +1,5 @@
 <?php
+
 namespace Model;
 class User extends Database {
 
@@ -59,4 +60,7 @@ class User extends Database {
         }
         return false;
     }
+
+
+
 }
