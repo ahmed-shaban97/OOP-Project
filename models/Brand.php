@@ -1,5 +1,7 @@
 <?php
+// namespace models;
 
+// use Config\Database;
 
 class Brand extends Database
 {
@@ -15,22 +17,22 @@ class Brand extends Database
     }
     public function create($data){
         $sql="INSERT INTO brands (name) VALUES (:name) ";
-        $this->execute($sql,['name'=> $data['brand_name']]);
+        $this->execute($sql,['name'=> $data['name']]);
         return $this->lastInsertId();
         
     }
     public function update($id,$data){
-        $sql="UPDATE brands SET name = :name ";
+        $sql="UPDATE brands SET name = :name WHERE id =:id ";
         $param=[
-            'id'=>$id,
-            'name'=>$data['name']
+            ':id'=>$id,
+            ':name'=>$data['name']
         ];
         
         return $this->execute($sql,$param);
     }
 
     public function delete($id){
-        $sql="DELETE FROM brands WHERE id :$id";
-        return $this->execute($sql,['id'=>$id]);
+        $sql="DELETE FROM brands WHERE id =:id";
+        return $this->execute($sql,[':id'=>$id]);
     }
 }

@@ -1,4 +1,9 @@
 <?php
+// namespace config;
+// use Exception;
+// use PDO;
+// use PDOException;
+
 class Database
 {
     protected $host = "localhost";

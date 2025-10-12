@@ -38,9 +38,9 @@
                   <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                   <li class="nav-item ">
-                      <a href="admin_index.php?page=admin" class="nav-link active">
+                      <a href="admin_index.php?page=admin" class="nav-link <?php echo $status=="Dashboard" ? "active"
+                          :""; ?>">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
-
                           <p>
                               Dashboard
                           </p>
@@ -49,12 +49,28 @@
                   </li>
 
                   <li class="nav-item">
-                      <a href="admin_index.php?page=product" class="nav-link">
+                      <a href="admin_index.php?page=product"
+                          class="nav-link <?php echo $status=="Product" ? "active" :"";?>">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>Products</p>
                       </a>
                   </li>
 
+                  <li class="nav-item">
+                      <a href="admin_index.php?page=category" class="nav-link <?php echo $status=="Category" ? "active" :"";
+                          ?>">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>Categorys</p>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="admin_index.php?page=brand" class="nav-link <?php if($status=="Brand") {
+                            echo "active";
+                        }?>">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <p>Brands</p>
+                      </a>
+                  </li>
               </ul>
           </nav>
           <!-- /.sidebar-menu -->

@@ -1,5 +1,5 @@
 <?php 
-
+$status="Product";
 require_once __DIR__. "/../../../models/Category.php";
 
 ?>

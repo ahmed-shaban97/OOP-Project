@@ -1,6 +1,5 @@
 <?php
 require_once __DIR__ . "/../config/Database.php";
-
 class Product extends Database
 {
         public function getAll()
@@ -34,33 +33,10 @@ class Product extends Database
                 return $this->lastInsertId();
         }
 
-        // public function update($id, $data)
-        // {
-        //         $sql = "UPDATE products 
-        //         SET name= :name,
-        //         price= :price,
-        //         image= :image,
-        //         description= :description,
-        //         stock_qty= :stock_qty,
-        //         category_id= :category_id,
-        //         brand_id= :brand_id
-        //         WHERE id= :id
-        //         ";
 
-        //         $params = [
-        //                 ':id' => $id,
-        //                 ':price' => $data['price'],
-        //                 ':image' => $data['image'],
-        //                 ':description' => $data['description'],
-        //                 ':stock_qty' => $data['stock_qty'],
-        //                 ':category_id' => $data['category_id'],
-        //                 ':brand_id' => $data['brand_id']
-        //         ];
-        //         return $this->execute($sql, $params);
-        // }
-public function update($id, $data)
-{
-    $sql = "UPDATE products 
+        public function update($id, $data)
+        {
+                $sql = "UPDATE products 
             SET 
                 name = :name,
                 price = :price,
@@ -71,19 +47,19 @@ public function update($id, $data)
                 brand_id = :brand_id
             WHERE id = :id";
 
-    $params = [
-        ':id' => $id,
-        ':name' => $data['name'],
-        ':price' => $data['price'],
-        ':image' => $data['image'],
-        ':description' => $data['description'],
-        ':stock_qty' => $data['stock_qty'],
-        ':category_id' => $data['category_id'],
-        ':brand_id' => $data['brand_id']
-    ];
+                $params = [
+                        ':id' => $id,
+                        ':name' => $data['name'],
+                        ':price' => $data['price'],
+                        ':image' => $data['image'],
+                        ':description' => $data['description'],
+                        ':stock_qty' => $data['stock_qty'],
+                        ':category_id' => $data['category_id'],
+                        ':brand_id' => $data['brand_id']
+                ];
 
-    return $this->execute($sql, $params);
-}
+                return $this->execute($sql, $params);
+        }
 
 
         public function delete($id)
