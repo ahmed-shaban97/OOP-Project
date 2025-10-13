@@ -1,9 +1,10 @@
 <?php
+ob_start();
+
 session_start();
+require_once __DIR__ . '/vendor/autoload.php';
+
 require_once "./config/DB_connection.php";
-require_once "./models/Product.php";
-require_once "./models/category.php";
-require_once "./models/brand.php";
 
 include "./inc/admin/header.php";
 include "./inc/admin/sidebar.php";
@@ -23,7 +24,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'edit_product':
-            include "./views/admin/products/edit_product.php";
+            include "views/admin/products/edit_product.php";
             break;
         case 'update_product':
             include "controller/product/update_product.php";
@@ -79,3 +80,4 @@ if (isset($_GET['page'])) {
 
 
 include "inc/admin/footer.php";
+ob_end_flush();

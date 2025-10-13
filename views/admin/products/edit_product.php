@@ -1,4 +1,9 @@
 <?php
+use Model\Product;
+use Model\Category;
+use Model\Brand;
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
     $id_pro= isset($_GET['id']) ? $_GET['id'] : 0;
     $productModel=new Product();
     $categoryModel=new Category();

@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/../../models/Category.php';
+use Model\Category;
+require_once __DIR__ . '/../../vendor/autoload.php';
+use Exception;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 

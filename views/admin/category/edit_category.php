@@ -1,4 +1,7 @@
 <?php
+use Model\Category;
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
 // require_once __DIR__."/../../../models/Category.php";
 // require_once __DIR__."/../../../models/Brand.php";
 ?>

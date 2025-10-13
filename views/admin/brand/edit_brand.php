@@ -1,6 +1,8 @@
 <?php
 // require_once __DIR__."/../../../models/Category.php";
 // require_once __DIR__."/../../../models/Brand.php";
+use Model\Brand;
+require_once __DIR__ . '/../../../vendor/autoload.php';
 ?>
 <?php
 $id_brand = isset($_GET['id']) ? $_GET['id'] : 0;

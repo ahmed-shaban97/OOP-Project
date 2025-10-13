@@ -204,64 +204,78 @@
                                         </div>
                                     </form>
                                 </div>
+                                <?php
+require_once __DIR__ . '/../vendor/autoload.php';
+use Model\Cart;
+
+$user_id = $_SESSION['user_id'] ?? 1;
+$cartModel = new Cart();
+$cart = $cartModel->getCartByUser($user_id);
+$cart_id = $cart['id'] ?? null;
+$cartItems = $cart_id ? $cartModel->getItems($cart_id) : [];
+$cartCount = count($cartItems);
+$cartTotal = 0;
+foreach ($cartItems as $item) {
+    $cartTotal += $item['price'] * $item['quantity'];
+}
+?>
                                 <div class="middel_right_info">
                                     <div class="header_wishlist">
                                         <a href="#"><img src="assets/img/user.png" alt=""></a>
                                     </div>
                                     <div class="mini_cart_wrapper">
                                         <a href="javascript:void(0)"><img src="assets/img/shopping-bag.png" alt=""></a>
-                                        <span class="cart_quantity">2</span>
+                                        <span class="cart_quantity"><?= $cartCount ?></span>
+
                                         <!--mini cart-->
                                         <div class="mini_cart">
+                                            <?php if(!empty($cartItems)): ?>
+                                            <?php foreach($cartItems as $item): ?>
                                             <div class="cart_item">
                                                 <div class="cart_img">
-                                                    <a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a>
+                                                    <a href="#"><img
+                                                            src="assets/image/<?= htmlspecialchars($item['image']) ?>"
+                                                            alt=""></a>
                                                 </div>
                                                 <div class="cart_info">
-                                                    <a href="#">Sit voluptatem rhoncus sem lectus</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>
+                                                    <a href="#"><?= htmlspecialchars($item['name']) ?></a>
+                                                    <p>Qty: <?= $item['quantity'] ?> X
+                                                        <span>$<?= number_format($item['price'], 2) ?></span></p>
                                                 </div>
                                                 <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
+                                                    <a
+                                                        href="index.php?page=remove-from-cart&product_id_minicart=<?= $item['product_id'] ?>"><i
+                                                            class="ion-android-close"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="cart_item">
-                                                <div class="cart_img">
-                                                    <a href="#"><img src="assets/img/s-product/product2.jpg" alt=""></a>
-                                                </div>
-                                                <div class="cart_info">
-                                                    <a href="#">Natus erro at congue massa commodo</a>
-                                                    <p>Qty: 1 X <span> $60.00 </span></p>
-                                                </div>
-                                                <div class="cart_remove">
-                                                    <a href="#"><i class="ion-android-close"></i></a>
-                                                </div>
-                                            </div>
+                                            <?php endforeach; ?>
                                             <div class="mini_cart_table">
                                                 <div class="cart_total">
                                                     <span>Sub total:</span>
-                                                    <span class="price">$138.00</span>
+                                                    <span class="price">$<?= number_format($cartTotal, 2) ?></span>
                                                 </div>
                                                 <div class="cart_total mt-10">
-                                                    <span>total:</span>
-                                                    <span class="price">$138.00</span>
+                                                    <span>Total:</span>
+                                                    <span class="price">$<?= number_format($cartTotal, 2) ?></span>
                                                 </div>
                                             </div>
+                                            <?php else: ?>
+                                            <p class="text-center">Your cart is empty.</p>
+                                            <?php endif; ?>
 
                                             <div class="mini_cart_footer">
                                                 <div class="cart_button">
-                                                    <a href="<?= "index.php?page=cart" ?>">View cart</a>
+                                                    <a href="index.php?page=cart">View cart</a>
                                                 </div>
                                                 <div class="cart_button">
-                                                    <a href="<?= "index.php?page=checkout" ?>">Checkout</a>
+                                                    <a href="index.php?page=checkout">Checkout</a>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                         <!--mini cart end-->
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

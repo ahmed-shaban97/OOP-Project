@@ -1,7 +1,7 @@
 <?php
-
-
-require_once __DIR__ . '/../../models/Product.php';
+use Model\Product;
+require_once __DIR__ . '/../../vendor/autoload.php';
+use Exception;
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     foreach ($_POST as $key => $value) {

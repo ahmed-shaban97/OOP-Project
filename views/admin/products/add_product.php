@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__."/../../../models/Category.php";
-require_once __DIR__."/../../../models/Brand.php";
+use Model\Category;
+use Model\Brand;
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
 ?>
 <section class="py-3 mt-5 mb-5 ms-5" style="width:100%;">
     <div class="container ">

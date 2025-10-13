@@ -2,7 +2,8 @@
 // namespace models;
 
 // use Config\Database;
-require_once __DIR__ . "/../config/Database.php";
+namespace Model;
+
 
 class Category extends Database
 {

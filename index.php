@@ -18,13 +18,13 @@ $routes = [
     'cart' => 'views/cart.php',
     'login' => 'views/auth/login.php',
     'register' => 'views/auth/register.php',
-    
+    'add-to-cart' => 'controller/cart/add-to-cart.php',
+    'remove-from-cart' => 'controller/cart/remove-from-cart.php',
+    'update-cart' => 'controller/cart/update-cart.php',
+
     'login-controller' => 'controller/auth/login.php',
     'register-controller' => 'controller/auth/register.php',
-    'add-to-cart' => 'controller/cart/add-to-cart.php',
-    'cart-increment' => 'controller/cart/increment.php',
-    'cart-decrement' => 'controller/cart/decrement.php',
-    'cart-delete' => 'controller/cart/delete.php',
+
 ];
 
 if (array_key_exists($page, $routes)) {

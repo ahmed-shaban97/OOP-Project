@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/../../models/Product.php';
+use Model\Product;
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 $id = $_POST['id'];
 

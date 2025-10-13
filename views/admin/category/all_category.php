@@ -1,6 +1,8 @@
 <?php 
+use Model\Category;
+require_once __DIR__ . '/../../../vendor/autoload.php';
+
 $status="Categroy";
-require_once __DIR__. "/../../../models/Category.php";
 
 ?>
 <div class="content-wrapper">

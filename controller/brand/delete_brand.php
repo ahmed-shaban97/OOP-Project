@@ -1,5 +1,7 @@
 <?php
-require_once __DIR__ . '/../../models/Brand.php';
+use Model\Brand;
+use Exception;
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 

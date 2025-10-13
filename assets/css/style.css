@@ -9859,6 +9859,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-top: 35px;
   border-radius: 3px;
 }
+
+
 @media only screen and (max-width: 767px) {
   .error_form a {
     padding: 0 20px;

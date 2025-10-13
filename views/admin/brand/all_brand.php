@@ -1,6 +1,7 @@
 <?php 
+use Model\Brand;
+require_once __DIR__ . '/../../../vendor/autoload.php';
 $status="Brand";
-require_once __DIR__. "/../../../models/Category.php";
 
 ?>
 <div class="content-wrapper">

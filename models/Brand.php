@@ -2,6 +2,7 @@
 // namespace models;
 
 // use Config\Database;
+namespace Model;
 
 class Brand extends Database
 {
