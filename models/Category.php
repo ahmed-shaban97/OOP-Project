@@ -40,4 +40,18 @@ class Category extends Database
         $sql="DELETE FROM categories WHERE id =:id";
         return $this->execute($sql,[':id'=>$id]);
     }
+
+    
+    public function getProductsByCategory($category_id)
+{
+    $sql = "
+        SELECT p.*, c.name AS category_name, b.name AS brand_name
+        FROM products p
+        JOIN categories c ON p.category_id = c.id
+        JOIN brands b ON p.brand_id = b.id
+        WHERE p.category_id = :category_id
+    ";
+    return $this->fetchAll($sql, ['category_id' => $category_id]);
+}
+
 }

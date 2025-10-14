@@ -3,12 +3,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Model\Cart;
 
-$user_id = $_SESSION['user_id'] ?? 1;
+$user_id = $_SESSION['user']['id'] ;
 $cartModel = new Cart();
 
-// =====================
-// Fetch Cart Data
-// =====================
+
 $cart = $cartModel->getCartByUser($user_id);
 $cart_id = $cart['id'] ?? null;
 $cartItems = $cart_id ? $cartModel->getItems($cart_id) : [];

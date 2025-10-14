@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 use Model\Cart;
 $cartModel = new Cart();
-$user_id = $_SESSION['user_id'] ?? 1;
+$user_id = $_SESSION['user']['id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'], $_POST['product_quantity'])) {
     $cart = $cartModel->getCartByUser($user_id);

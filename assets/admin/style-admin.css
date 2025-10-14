@@ -1,0 +1,9 @@
+.user-panel .image img {
+    width: 50px;
+    /* خلي العرض والارتفاع متساوي */
+    height: 50px;
+    object-fit: cover;
+    /* عشان الصورة ما تتفردش */
+    border-radius: 50%;
+    /* تخليها دايرة تمامًا */
+}

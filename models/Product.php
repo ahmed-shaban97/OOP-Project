@@ -90,9 +90,30 @@ class Product extends Database
  }
  public function getOldPrice($price)
 {
-    // مثلاً نضيف 20% على السعر الحالي
     $oldPrice = $price + ($price * 0.20);
     return number_format($oldPrice, 2);
 }
+public function getTop3MostAddedToCart()
+{
+    $sql = "
+        SELECT 
+            p.id,
+            p.name,
+            p.price,
+            p.image,
+            b.name AS brand_name,
+            SUM(ci.quantity) AS total_added
+        FROM cart_item AS ci
+        JOIN products AS p ON ci.product_id = p.id
+        JOIN brands AS b ON p.brand_id = b.id
+        GROUP BY p.id
+        ORDER BY total_added DESC
+        LIMIT 3
+    ";
+
+    return $this->fetchAll($sql);
+}
+
+
 
 }

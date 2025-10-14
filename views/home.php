@@ -11,9 +11,10 @@ $message->getMessage();
 
 $productModel = new Product();
 $products = $productModel->getAll();
+$topProducts = $productModel->getTop3MostAddedToCart();
 ?>
 
-
+<!-- ===== Header (Video Section) ===== -->
 <header class="position-relative text-white text-center d-flex justify-content-center align-items-center"
     style="width:100%; min-height: 400px; overflow:hidden;">
     <video autoplay muted loop playsinline class="position-absolute top-0 start-0 w-100 h-100"
@@ -22,68 +23,71 @@ $products = $productModel->getAll();
     </video>
 
     <div class="header-content p-3" style="z-index: 1; max-width: 800px;">
-        <h1>Elevate Your Shopping</h1>
-        <p>Experience fashion like never before</p>
-        <a href="index.php" class="btn btn-primary btn-lg mt-3">Explore Now</a>
+        <h1 class="fw-bold display-5 mb-3">Elevate Your Shopping</h1>
+        <p class="lead">Experience fashion like never before</p>
+        <a href="index.php" class="btn btn-primary btn-lg mt-3 px-4 py-2">Explore Now</a>
     </div>
 </header>
 
-
-<!--Tranding product-->
-<section class="pt-60 pb-30 gray-bg">
+<!---------- Top Selling Products -------->
+<section class="tranding-product section-padding mt-5 pt-5">
     <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="section-title">
-                    <h2>Trending Products</h2>
-                </div>
-            </div>
+        <div class="section-title text-center mb-5">
+            <h2 class="fw-bold text-uppercase"> TRENDING </h2>
+            <p class="text-muted">The most popular products our customers love</p>
         </div>
 
-        <div class="row justify-content-center">
-            <?php if (!empty($products)): ?>
-            <?php foreach ($products as $product): ?>
+        <div class="row">
+            <?php if (!empty($topProducts)): ?>
+            <?php foreach ($topProducts as $product): ?>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="single-tranding text-center p-3 shadow-sm bg-white rounded">
                     <a href="index.php?page=product-details&id=<?= $product['id'] ?>"
                         class="text-decoration-none text-dark">
                         <div class="tranding-pro-img mb-3">
                             <img src="assets/image/<?= htmlspecialchars($product['image']) ?>"
-                                alt="<?= htmlspecialchars($product['name']) ?>" class="img-fluid rounded"
-                                style="height: 250px; object-fit: cover;">
+                                alt="<?= htmlspecialchars($product['name']) ?>" class="img-fluid rounded">
                         </div>
                         <div class="tranding-pro-title mb-2">
                             <h3 class="h5 mb-1"><?= htmlspecialchars($product['name']) ?></h3>
-                            <h4 class="text-muted small"><?= htmlspecialchars($product['brand_name']) ?></h4>
+                            <h4 class="text-muted small"><?= htmlspecialchars($product['brand_name'] ?? 'Unknown') ?>
+                            </h4>
                         </div>
                         <div class="tranding-pro-price mb-3">
                             <div class="price_box">
                                 <span
-                                    class="current_price fw-bold text-success">$<?= number_format($product['price'], 2) ?></span>
+                                    class="current_price fw-bold text-success"><?= htmlspecialchars($product['price']) ?>
+                                    EGP</span>
                                 <span class="old_price text-muted text-decoration-line-through ms-2">
-                                    $<?= $productModel->getOldPrice($product['price']) ?>
+                                    <?= $productModel->getOldPrice($product['price']) ?> EGP
                                 </span>
                             </div>
                         </div>
+
+                        <!-- عدد مرات الإضافة -->
+                        <div class="tranding-pro-stats mt-2 text-muted small">
+                            <i class="fa fa-shopping-cart me-1 text-primary"></i>
+                            Added to cart <strong><?= $product['total_added'] ?></strong> times
+                        </div>
+
                     </a>
                     <form action="index.php?page=add-to-cart" method="POST">
                         <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                        <input type="hidden" name="product_quantity" value="1">
+                        <input type="hidden" name="product_name" value="<?= htmlspecialchars($product['name']) ?>">
+                        <input type="hidden" name="product_price" value="<?= htmlspecialchars($product['price']) ?>">
                         <button type="submit" class="btn btn-primary btn-sm px-4">
                             <i class="fa fa-shopping-cart me-1"></i> Add to Cart
                         </button>
                     </form>
-
                 </div>
             </div>
             <?php endforeach; ?>
             <?php else: ?>
-            <p class="text-center text-muted">No products available yet.</p>
+            <p class="text-center text-muted">No popular products yet.</p>
             <?php endif; ?>
         </div>
     </div>
 </section>
-<!--Tranding product end-->
 
 
 <!-- Features area -->
@@ -135,6 +139,7 @@ $products = $productModel->getAll();
 
 
 <!--Other product-->
+
 <section class="pt-60 pb-30 gray-bg">
     <div class="container">
         <div class="row">
@@ -144,95 +149,47 @@ $products = $productModel->getAll();
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center">
-
-            <!-- Product 1 -->
+            <?php if (!empty($products)): ?>
+            <?php foreach ($products as $product): ?>
             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="single-tranding text-center p-3 shadow-sm bg-white rounded">
-                    <a href="<?= "index.php?page=product-details" ?>" class="text-decoration-none text-dark">
+                    <a href="index.php?page=product-details&id=<?= $product['id'] ?>"
+                        class="text-decoration-none text-dark">
                         <div class="tranding-pro-img mb-3">
-                            <img src="assets/img/product/tranding-1.jpg" alt="" class="img-fluid rounded">
+                            <img src="assets/image/<?= htmlspecialchars($product['image']) ?>"
+                                alt="<?= htmlspecialchars($product['name']) ?>" class="img-fluid rounded"
+                                style="height: 250px; object-fit: cover;">
                         </div>
                         <div class="tranding-pro-title mb-2">
-                            <h3 class="h5 mb-1">Meyoji Robast Drone</h3>
-                            <h4 class="text-muted small">Drone</h4>
+                            <h3 class="h5 mb-1"><?= htmlspecialchars($product['name']) ?></h3>
+                            <h4 class="text-muted small"><?= htmlspecialchars($product['brand_name']) ?></h4>
                         </div>
                         <div class="tranding-pro-price mb-3">
                             <div class="price_box">
-                                <span class="current_price fw-bold text-success">$70.00</span>
-                                <span class="old_price text-muted text-decoration-line-through ms-2">$80.00</span>
+                                <span
+                                    class="current_price fw-bold text-success">$<?= number_format($product['price'], 2) ?></span>
+                                <span class="old_price text-muted text-decoration-line-through ms-2">
+                                    $<?= $productModel->getOldPrice($product['price']) ?>
+                                </span>
                             </div>
                         </div>
                     </a>
                     <form action="index.php?page=add-to-cart" method="POST">
-                        <input type="hidden" name="product_id" value="1">
-                        <input type="hidden" name="product_name" value="Meyoji Robast Drone">
-                        <input type="hidden" name="product_price" value="70.00">
+                        <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                        <input type="hidden" name="product_quantity" value="1">
                         <button type="submit" class="btn btn-primary btn-sm px-4">
                             <i class="fa fa-shopping-cart me-1"></i> Add to Cart
                         </button>
                     </form>
+
                 </div>
             </div>
-
-            <!-- Product 2 -->
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="single-tranding text-center p-3 shadow-sm bg-white rounded">
-                    <a href="<?= "index.php?page=product-details" ?>" class="text-decoration-none text-dark">
-                        <div class="tranding-pro-img mb-3">
-                            <img src="assets/img/product/tranding-2.jpg" alt="" class="img-fluid rounded">
-                        </div>
-                        <div class="tranding-pro-title mb-2">
-                            <h3 class="h5 mb-1">Ut praesentium earum</h3>
-                            <h4 class="text-muted small">Mevrik</h4>
-                        </div>
-                        <div class="tranding-pro-price mb-3">
-                            <div class="price_box">
-                                <span class="current_price fw-bold text-success">$70.00</span>
-                                <span class="old_price text-muted text-decoration-line-through ms-2">$80.00</span>
-                            </div>
-                        </div>
-                    </a>
-                    <form action="index.php?page=add-to-cart" method="POST">
-                        <input type="hidden" name="product_id" value="2">
-                        <input type="hidden" name="product_name" value="Ut praesentium earum">
-                        <input type="hidden" name="product_price" value="70.00">
-                        <button type="submit" class="btn btn-primary btn-sm px-4">
-                            <i class="fa fa-shopping-cart me-1"></i> Add to Cart
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="single-tranding text-center p-3 shadow-sm bg-white rounded">
-                    <a href="<?= "index.php?page=product-details" ?>" class="text-decoration-none text-dark">
-                        <div class="tranding-pro-img mb-3">
-                            <img src="assets/img/product/tranding-3.jpg" alt="" class="img-fluid rounded">
-                        </div>
-                        <div class="tranding-pro-title mb-2">
-                            <h3 class="h5 mb-1">Consectetur adipisicing</h3>
-                            <h4 class="text-muted small">Flyer</h4>
-                        </div>
-                        <div class="tranding-pro-price mb-3">
-                            <div class="price_box">
-                                <span class="current_price fw-bold text-success">$70.00</span>
-                                <span class="old_price text-muted text-decoration-line-through ms-2">$80.00</span>
-                            </div>
-                        </div>
-                    </a>
-                    <form action="index.php?page=add-to-cart" method="POST">
-                        <input type="hidden" name="product_id" value="3">
-                        <input type="hidden" name="product_name" value="Consectetur adipisicing">
-                        <input type="hidden" name="product_price" value="70.00">
-                        <button type="submit" class="btn btn-primary btn-sm px-4">
-                            <i class="fa fa-shopping-cart me-1"></i> Add to Cart
-                        </button>
-                    </form>
-                </div>
-            </div>
-
+            <?php endforeach; ?>
+            <?php else: ?>
+            <p class="text-center text-muted">No products available yet.</p>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -288,40 +245,7 @@ $products = $productModel->getAll();
     </div>
 </section>
 
-<!-- Styling -->
-<style>
-.testimonial_thumb {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 20px;
-    border: 5px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
-.testimonial_thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.testimonial_content p {
-    font-style: italic;
-    color: #333;
-    line-height: 1.6;
-}
-
-.testimonial_content h3 a {
-    color: #2b2bff;
-    text-decoration: none;
-}
-
-.testimonial_content span {
-    color: #444;
-}
-</style>
 <!--/Testimonials-->
 
 <!--shipping area start-->

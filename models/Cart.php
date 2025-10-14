@@ -79,5 +79,11 @@ public function updateQuantity($cart_id, $product_id, $quantity)
         'product_id' => $product_id
     ]);
 }
+public function getTotalAddedToCart()
+{
+    $sql = "SELECT SUM(quantity) AS total_added FROM cart_item";
+    $result = $this->fetch($sql);
+    return $result ? (int)$result['total_added'] : 0;
+}
 
 }

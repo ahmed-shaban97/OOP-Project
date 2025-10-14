@@ -1,9 +1,6 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
-
 use Model\User;
-
-session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);

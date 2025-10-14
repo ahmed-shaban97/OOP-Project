@@ -3,7 +3,7 @@
       <a href="dashboard.php" class="brand-link">
           <img src="assets/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
               class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">AdminLTE 3</span>
+          <span class="brand-text font-weight-light">Admin</span>
       </a>
 
       <!-- Sidebar -->
@@ -11,10 +11,14 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div class="image">
-                  <img src="assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                  <?php if($_SESSION['admin']['email'] == 'reyad0@gmail.com'):?>
+                  <img src="assets/img/about/dev1.jpg" class="img-circle elevation-2" alt="User Image">
+                  <?php else:?>
+                  <img src="assets/img/about/dev2.jpg" class="img-circle elevation-2" alt="User Image">
+                  <?php endif ?>
               </div>
               <div class="info">
-                  <a href="#" class="d-block">Alexander Pierce</a>
+                  <a href="#" class="d-block"><?=$_SESSION['admin']['name']??'Admin'?></a>
               </div>
           </div>
 

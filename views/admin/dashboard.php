@@ -1,6 +1,21 @@
 <?php
-$status="Dashboard";
+$status = "Dashboard";
+use Model\User;
+use Model\Cart;
+
+$cartModel = new Cart();
+$totalAdded = $cartModel->getTotalAddedToCart();
+
+$goal = 200;
+$progress = $goal > 0 ? ($totalAdded / $goal) * 100 : 0;
+
+
+
+
+$userModel = new User();
+$totalUsers = $userModel->countUsers();
 ?>
+
 <!-- Main Sidebar Container -->
 
 
@@ -11,12 +26,12 @@ $status="Dashboard";
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Dashboard v2</h1>
+                    <h1 class="m-0">Dashboard</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v2</li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -80,8 +95,8 @@ $status="Dashboard";
                         <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">New Members</span>
-                            <span class="info-box-number">2,000</span>
+                            <span class="info-box-text">Members</span>
+                            <span class="info-box-number"><?= number_format($totalUsers) ?></span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -140,11 +155,15 @@ $status="Dashboard";
 
                                     <div class="progress-group">
                                         Add Products to Cart
-                                        <span class="float-right"><b>160</b>/200</span>
+                                        <span class="float-right">
+                                            <b><?= $totalAdded ?></b>/<?= $goal ?>
+                                        </span>
                                         <div class="progress progress-sm">
-                                            <div class="progress-bar bg-primary" style="width: 80%"></div>
+                                            <div class="progress-bar bg-primary"
+                                                style="width: <?= min($progress, 100) ?>%"></div>
                                         </div>
                                     </div>
+
                                     <!-- /.progress-group -->
 
                                     <div class="progress-group">
