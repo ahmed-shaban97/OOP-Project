@@ -22,7 +22,7 @@ $routes = [
     'login-controller' => 'controller/auth/login.php',
     'register-controller' => 'controller/auth/register.php',
     'logout' => 'controller/auth/logout.php',
-
+    'add-order' => 'controller/order/orderController.php',
     'add-to-cart' => 'controller/cart/add-to-cart.php',
     'remove-from-cart' => 'controller/cart/remove-from-cart.php',
     'update-cart' => 'controller/cart/update-cart.php',

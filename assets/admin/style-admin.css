@@ -7,3 +7,60 @@
     border-radius: 50%;
     /* تخليها دايرة تمامًا */
 }
+                .breadcrumbs_area {
+                    background: #f5f6fa;
+                    padding: 20px 0;
+                    border-bottom: 1px solid #e0e0e0;
+                }
+        
+                .breadcrumb_content ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                }
+        
+                .breadcrumb_content ul li {
+                    color: #555;
+                    font-size: 16px;
+                    margin-right: 8px;
+                    display: flex;
+                    align-items: center;
+                }
+        
+                .breadcrumb_content ul li a {
+                    color: #007bff;
+                    text-decoration: none;
+                    transition: 0.3s;
+                    font-weight: 500;
+                }
+        
+                .breadcrumb_content ul li a:hover {
+                    color: #0056b3;
+                    text-decoration: underline;
+                }
+        
+                .breadcrumb_content ul li:not(:last-child)::after {
+                    content: "›";
+                    color: #999;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    font-size: 14px;
+                }
+        
+                /* داكن شوية لو الصفحة داخل لوحة تحكم */
+                .dark-mode .breadcrumbs_area {
+                    background: #2c2f33;
+                    border-color: #3a3d41;
+                }
+        
+                .dark-mode .breadcrumb_content ul li,
+                .dark-mode .breadcrumb_content ul li a {
+                    color: #e0e0e0;
+                }
+        
+                .dark-mode .breadcrumb_content ul li a:hover {
+                    color: #66b3ff;
+                }

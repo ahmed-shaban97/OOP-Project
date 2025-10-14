@@ -1,11 +1,10 @@
-<!-- admin_index.php -->
 <?php
 ob_start();
 session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 require_once "./config/DB_connection.php";
 
-$authPages = ['login'];
+$authPages = ['login', '404'];
 
 $protectedPages = [
     'dashboard',
@@ -28,6 +27,7 @@ $protectedPages = [
 
 $page = $_GET['page'] ?? 'dashboard';
 
+// لو الصفحة محمية والادمن مش داخل => نوجهه للـ login
 if (in_array($page, $protectedPages) && !isset($_SESSION['admin'])) {
     header("Location: admin_index.php?page=login");
     exit();
@@ -76,21 +76,28 @@ $routes = [
     'add_user' => './views/admin/users/add_user.php',
     'store_user' => 'controller/user/store_user.php',
     'delete_user' => 'controller/user/delete_user.php',
+
+    // 404 page
+    '404' => './views/admin/404.php',
 ];
 
-if (!in_array($page, $authPages)) {
-    include "./inc/admin/header.php";
-    include "./inc/admin/sidebar.php";
-}
-
+// ✅ أولاً: نتحقق هل الصفحة موجودة
 if (array_key_exists($page, $routes)) {
-    include $routes[$page];
-} else {
-    include "./views/admin/dashboard.php"; 
-}
+    // لو الصفحة موجودة
+    if (!in_array($page, $authPages)) {
+        include "./inc/admin/header.php";
+        include "./inc/admin/sidebar.php";
+    }
 
-if (!in_array($page, $authPages)) {
-    include "./inc/admin/footer.php";
+    include $routes[$page];
+
+    if (!in_array($page, $authPages)) {
+        include "./inc/admin/footer.php";
+    }
+} else {
+    // لو الصفحة مش موجودة => نعرض صفحة 404 فقط
+    http_response_code(404);
+    include "./views/404.php";
 }
 
 ob_end_flush();
