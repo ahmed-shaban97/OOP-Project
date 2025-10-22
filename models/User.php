@@ -88,5 +88,14 @@ public function countUsers()
     return $result ? $result['total'] : 0;
 }
 
+public function getLatestUsers($limit = 5)
+{
+    $sql = "SELECT * FROM users 
+            WHERE role_id = 2
+            ORDER BY id DESC
+            LIMIT :limit";
+    return $this->fetchAll($sql, [':limit' => $limit]);
+}
+
 
 }

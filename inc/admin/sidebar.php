@@ -42,55 +42,60 @@
                   <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                   <li class="nav-item ">
-                      <a href="admin_index.php?page=dashboard" class="nav-link <?php echo $status=="Dashboard" ? "active"
-                          :""; ?>">
+                      <a href="admin_index.php?page=dashboard"
+                          class="nav-link <?php echo $status=="Dashboard" ? "active" :""; ?>">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
-                          <p>
-                              Dashboard
-                          </p>
+                          <p>Dashboard</p>
                       </a>
-
                   </li>
 
                   <li class="nav-item">
                       <a href="admin_index.php?page=product"
                           class="nav-link <?php echo $status=="Product" ? "active" :"";?>">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <i class="nav-icon fas fa-box-open"></i>
                           <p>Products</p>
                       </a>
                   </li>
 
                   <li class="nav-item">
-                      <a href="admin_index.php?page=category" class="nav-link <?php echo $status=="Category" ? "active" :"";
-                          ?>">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
-                          <p>Categorys</p>
+                      <a href="admin_index.php?page=category"
+                          class="nav-link <?php echo $status=="Category" ? "active" :"";?>">
+                          <i class="nav-icon fas fa-th-list"></i>
+                          <p>Categories</p>
                       </a>
                   </li>
+
                   <li class="nav-item">
-                      <a href="admin_index.php?page=brand" class="nav-link <?php if($status=="Brand") {
-                            echo "active";
-                        }?>">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <a href="admin_index.php?page=brand"
+                          class="nav-link <?php echo $status=="Brand" ? "active" :"";?>">
+                          <i class="nav-icon fas fa-tags"></i>
                           <p>Brands</p>
                       </a>
                   </li>
+
                   <li class="nav-item">
-                      <a href="admin_index.php?page=user" class="nav-link <?php if($status=="Brand") {
-                            echo "active";
-                        }?>">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <a href="admin_index.php?page=user" class="nav-link <?php echo $status=="User" ? "active" :"";?>">
+                          <i class="nav-icon fas fa-users"></i>
                           <p>Users</p>
                       </a>
                   </li>
+
                   <li class="nav-item">
-                      <a href="admin_index.php?page=order" class="nav-link <?php if($status=="Order") {
-                            echo "active";
-                        }?>">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                      <a href="admin_index.php?page=order"
+                          class="nav-link <?php echo $status=="Order" ? "active" :"";?>">
+                          <i class="nav-icon fas fa-shopping-cart"></i>
                           <p>Orders</p>
                       </a>
                   </li>
+
+                  <li class="nav-item">
+                      <a href="admin_index.php?page=contact"
+                          class="nav-link <?php echo $status=="Contact" ? "active" :"";?>">
+                          <i class="nav-icon fas fa-envelope"></i>
+                          <p>Contacts</p>
+                      </a>
+                  </li>
+
               </ul>
           </nav>
           <!-- /.sidebar-menu -->

@@ -1,3 +1,4 @@
+<!-- index.php -->
 <?php
 ob_start();
 session_start();
@@ -9,9 +10,10 @@ $page = $_GET['page'] ?? 'home';
 
 $routes = [
     'home' => 'views/home.php',
+    'contact' => 'views/contact.php',
     'about' => 'views/about.php',
     'product-details' => 'views/product-details.php',
-    'contact' => 'views/contact.php',
+    'contact_controller' => 'controller/contact_controller.php',
     'checkout' => 'views/checkout.php',
     'cart' => 'views/cart.php',
     'products' => 'views/products.php',

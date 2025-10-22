@@ -114,6 +114,22 @@ public function getTop3MostAddedToCart()
     return $this->fetchAll($sql);
 }
 
+public function getLatestProducts($limit = 4)
+{
+    $sql = "
+        SELECT 
+            products.*, 
+            categories.name AS category_name, 
+            brands.name AS brand_name
+        FROM products
+        JOIN categories ON products.category_id = categories.id
+        JOIN brands ON products.brand_id = brands.id
+        ORDER BY products.id DESC
+        LIMIT :limit
+    ";
+    return $this->fetchAll($sql, ['limit' => $limit]);
+}
+
 
 
 }

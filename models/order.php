@@ -68,4 +68,37 @@ class Order extends Database
         $params = [':id' => $id];
         return $this->execute($sql, $params);
     }
+
+    public function getTotalOrders()
+{
+    $sql = "SELECT COUNT(*) AS total_orders FROM orders";
+    $result = $this->fetch($sql);
+    return $result ? $result['total_orders'] : 0;
+}
+public function getTotalSales()
+{
+    $sql = "SELECT SUM(total_price) AS total_sales FROM orders";
+    $result = $this->fetch($sql);
+    return $result ? $result['total_sales'] : 0;
+}
+
+
+public function getCompletedOrdersCount()
+{
+    $sql = "SELECT COUNT(*) AS completed_orders FROM orders WHERE status = 'completed'";
+    $result = $this->fetch($sql);
+    return $result ? $result['completed_orders'] : 0;
+}
+
+public function getLatestOrders($limit = 5)
+{
+    $sql = "SELECT o.id, o.status, oi.product_name
+            FROM orders o
+            JOIN order_items oi ON oi.order_id = o.id
+            ORDER BY o.id DESC
+            LIMIT :limit";
+    return $this->fetchAll($sql, [':limit' => $limit]);
+}
+
+
 }

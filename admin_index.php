@@ -1,3 +1,4 @@
+<!-- admin_index.php -->
 <?php
 ob_start();
 session_start();
@@ -23,11 +24,12 @@ $protectedPages = [
 
     // users
     'user', 'add_user', 'store_user', 'delete_user',
+    // contact
+    'contact',
 ];
 
 $page = $_GET['page'] ?? 'dashboard';
 
-// لو الصفحة محمية والادمن مش داخل => نوجهه للـ login
 if (in_array($page, $protectedPages) && !isset($_SESSION['admin'])) {
     header("Location: admin_index.php?page=login");
     exit();
@@ -41,6 +43,9 @@ $routes = [
 
     // Dashboard
     'dashboard' => './views/admin/dashboard.php',
+    // contact
+    'contact' => './views/admin/contact_admin.php',
+    'delete_contact' => 'controller/delete_contact.php',
 
     // Products
     'product' => './views/admin/products/all_product.php',
@@ -81,9 +86,7 @@ $routes = [
     '404' => './views/admin/404.php',
 ];
 
-// ✅ أولاً: نتحقق هل الصفحة موجودة
 if (array_key_exists($page, $routes)) {
-    // لو الصفحة موجودة
     if (!in_array($page, $authPages)) {
         include "./inc/admin/header.php";
         include "./inc/admin/sidebar.php";
@@ -95,7 +98,6 @@ if (array_key_exists($page, $routes)) {
         include "./inc/admin/footer.php";
     }
 } else {
-    // لو الصفحة مش موجودة => نعرض صفحة 404 فقط
     http_response_code(404);
     include "./views/404.php";
 }

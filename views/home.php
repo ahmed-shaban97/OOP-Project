@@ -4,11 +4,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../config/DB_connection.php';
 
 use Model\Product;
-use Model\Message;
-
-$message = new Message;
-$message->getMessage();
-
 $productModel = new Product();
 $products = $productModel->getAll();
 $topProducts = $productModel->getTop3MostAddedToCart();
@@ -64,7 +59,6 @@ $topProducts = $productModel->getTop3MostAddedToCart();
                             </div>
                         </div>
 
-                        <!-- عدد مرات الإضافة -->
                         <div class="tranding-pro-stats mt-2 text-muted small">
                             <i class="fa fa-shopping-cart me-1 text-primary"></i>
                             Added to cart <strong><?= $product['total_added'] ?></strong> times
